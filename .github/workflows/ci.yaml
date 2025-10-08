@@ -14,16 +14,17 @@ concurrency:
 jobs:
   test:
     name: "Test"
-    runs-on: ${{matrix.os}}-latest
+    runs-on: ${{matrix.os}}
     timeout-minutes: 10
 
     strategy:
       fail-fast: false
       matrix:
         os:
-          - ubuntu
-          - windows
-          - macos
+          - ubuntu-latest
+          - windows-latest
+          - windows-2022
+          - macos-latest
         vite-version:
           - 6
           - 7
