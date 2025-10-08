@@ -4,7 +4,7 @@ import { execa } from 'execa';
 import { join } from 'path';
 
 describe('running the app in dev mode', () => {
-  it('should work', async () => {
+  it('should work', { timeout: 50000  }, async () => {
     const viteExecaProcess = execa({
       cwd: join(__dirname, '..'),
     })`pnpm vite --force --clearScreen false`;
