@@ -24,6 +24,9 @@ jobs:
           - ubuntu
           - windows
           - macos
+        vite-version:
+          - 6
+          - 7
 
     steps:
       - uses: actions/checkout@v4
@@ -35,5 +38,6 @@ jobs:
           cache: pnpm
       - name: Install Dependencies
         run: pnpm install
+      - run: pnpm install vite@${{matrix.vite-version}}
       - name: Run Tests
         run: pnpm test
