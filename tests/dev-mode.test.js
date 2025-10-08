@@ -21,6 +21,11 @@ describe('running the app in dev mode', () => {
     });
 
     expect(HOST).toContain('localhost')
-    console.log(HOST)
+
+    const result = await fetch(HOST);
+
+    const html = await result.text();
+
+    expect(html).toContain("Hi bob")
   })
 })
